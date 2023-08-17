@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revaa</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" >
+    <link rel="icon" href="{% static 'images/fav-icon.png' %}" type="image/png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">  
+        <div class="card login-form">
+            <div class="card-body">
+                <div class="card-text">
+                    <form action="home" method="post" autocomplete="off">
+                        {% csrf_token %}
+                        <h2 class="card-title text-center">Login</h2>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert text-light bg-danger alert-{{message.tags}}">
+                                    {{message}}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="InputUsername">Employee id</label>
+                            <input name="employeeid" type="text"  class="form-control Input-box form-control-sm" id="InputUsername" placeholder="Type your employee id" style="border: none; outline: none; border-bottom: 1px solid rgb(6, 6, 6 ,2);  border-radius: 0; padding: 0px 30px;"/>
+                            <i class='bx bxs-user' ></i>
+                            <p class="error" id="employeeIderror"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputPassword">Password</label>
+                            <input name="employeepassword" type="password" class="form-control form-control-sm" id="InputPasssord" placeholder="Type your password" style="border: none; outline: none; border-bottom: 1px solid rgb(6, 6, 6 ,2);  border-radius: 0; padding: 20px 45px 20px 20px;  padding: 0px 30px"></input>
+                            <i class='bx bxs-lock-alt'  ></i>
+                            <a href="forgetpassword" style="float:right; font-size: 12px;">Forgot Password? </a>
+                            <p class="error" id="employeepassworderror"></p>
+                        </div>
+                        <div class="button" >
+                            <button type="submit" class="btn btn-primary" style="align-items: center; justify-content: center; align-content: center;">LOGIN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/login.js' %}" ></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  height: 100%;
+}
+body{
+  background: url(../images/bg.png);
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  overflow-y: hidden;
+  
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 1rem;
+}
+form{
+  padding-top: 10px;
+}
+
+.container h2{
+  
+  text-align: center;
+  font-weight: 700;
+}
+.login-form{
+  width: 380px;
+  height: 100vh;
+  margin: 20px;
+}
+.form-group{
+  padding: 1rem;
+}
+.form-group i{
+  position: absolute;
+  margin-top: -20px;
+  
+}
+.button{
+ justify-content: center;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  padding: 2rem;
+  width: 100%;
+  color: white;
+}
+.btn{
+  width: 100%;
+  width: 100%;
+  height: 45px;
+  background:url(../images/bg.png);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  /* color: #fff; */
+  font-weight: 600;
+}
+.form-group input:active{
+  border: none;
+  outline: none;
+border-style: none;
+}
+.error{
+  color: red;
+}
